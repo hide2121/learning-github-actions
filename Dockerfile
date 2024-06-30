@@ -8,4 +8,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o learning-github-actions
 
 FROM --platform=linux/amd64 scratch
 COPY --from=builder /app/learning-github-actions /app
+EXPOSE 8080
 ENTRYPOINT [ "/app" ]
