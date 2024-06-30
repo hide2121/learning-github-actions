@@ -7,5 +7,5 @@ COPY *.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -o learning-github-actions
 
 FROM scratch
-COPY --from=builder /app/earning-github-actions /app
+COPY --from=builder /app/learning-github-actions /app
 ENTRYPOINT [ "/app" ]
