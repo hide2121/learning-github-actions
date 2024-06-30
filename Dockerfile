@@ -4,8 +4,8 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY *.go ./
-RUN CGO_ENABLED=0 GOOS=linux go build -o cicdhandson
+RUN CGO_ENABLED=0 GOOS=linux go build -o learning-github-actions
 
 FROM scratch
-COPY --from=builder /app/cicdhandson /app
+COPY --from=builder /app/learning-github-actions /app
 ENTRYPOINT [ "/app" ]
